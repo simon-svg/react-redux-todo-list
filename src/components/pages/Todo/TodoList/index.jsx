@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 // Components
 import TodoItem from './TodoItem';
 
-const TodoList = () => {
+const TodoList = ({ setEditValue, setEditId }) => {
   const { todoList } = useSelector((state) => state.todo);
 
   const todoListContent = (
@@ -15,6 +15,8 @@ const TodoList = () => {
           id={todoItem.id}
           value={todoItem.value}
           done={todoItem.done}
+          setEditValue={setEditValue}
+          setEditId={setEditId}
         />
       );
     })
